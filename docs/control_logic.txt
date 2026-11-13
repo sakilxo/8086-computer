@@ -1,0 +1,26 @@
+F = A16 && A17 && A18 && A19
+
+COMMON = !ALE && M/IO && F
+
+CE_HIGH = !(COMMON && !BHE)
+CE_LOW = !(COMMON && !A0)
+
+--
+
+CE_HIGH = !COMMON || BHE
+CE_LOW = !COMMON || A0
+
+--
+
+CE_HIGH = !(!ALE && M/IO && F) || BHE
+CE_LOW = !(!ALE && M/IO && F) || A0
+
+--
+
+CE_HIGH = !((!ALE && M/IO) && F) || BHE
+CE_LOW = !((!ALE && M/IO) && F) || A0
+
+--
+
+CE_HIGH = !(!ALE && M/IO) || !F || BHE
+CE_LOW = !(!ALE && M/IO) || !F || A0
